@@ -18,7 +18,7 @@ func newKafkaWriter(kafkaURL string, topic string) *kafka.Writer {
 }
 
 func StartProducer() {
-	log.Println("==> starting producer...")
+	log.Println("==> starting producer")
 
 	openWeatherMapAPIKey := os.Getenv("OPEN_WEATHER_MAP_API_KEY")
 	if openWeatherMapAPIKey == "" {
@@ -41,7 +41,7 @@ func StartProducer() {
 		log.Fatalln("==> error getting weather: ", err)
 	}
 
-	log.Printf("==> writing to topic %s...\n", zipCode)
+	log.Printf("==> writing to topic %s\n", zipCode)
 
 	err = writer.WriteMessages(
 		context.Background(),
@@ -54,5 +54,5 @@ func StartProducer() {
 		log.Fatalf("==> error writing to topic %s: %s\n", zipCode, err)
 	}
 
-	log.Printf("==> writing to topic %s succeeded...\n", zipCode)
+	log.Printf("==> writing to topic %s succeeded\n", zipCode)
 }

@@ -3,9 +3,9 @@ build:
 	go build .
 
 .PHONY: producer
-producer:
+producer: build
 	./weather-alert producer
 
 .PHONY: consumer
-consumer:
+consumer: build
 	./weather-alert consumer
