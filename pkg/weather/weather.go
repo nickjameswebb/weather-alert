@@ -63,6 +63,7 @@ func (w *WeatherResponse) ToString() string {
 		"Conditions: %s | Temp: ~%.0f°F\n",
 		description,
 		KelvinToFahrenheit(w.Main.Temp),
+		
 	)
 }
 
